@@ -1,0 +1,49 @@
+Ruby - Language
+It's interpreted based language
+
+Line by line execution
+
+Object oriented programming language
+in Ruby everything is an object
+classes and modules are considered as constants in Ruby
+
+Customer
+
+#what customer has (attributes or variables)
+Phone 
+Address
+
+#action performed by customer (methods or functions)
+creating new order
+
+
+
+
+Car 
+
+#what does a car have ? (variables)
+
+Engine
+Wheels
+Steering
+
+
+
+
+#what does a car do ? (methods)
+
+accelerate()
+stop()
+start()
+switch_gear()
+
+
+
+Content
+===============================================
+
+car.rb - for understanding oops
+variable.rb - variables
+person.rb - to understand instance variables
+conditions.rb
+ruby_strings.rb
