@@ -47,3 +47,4 @@ variable.rb - variables
 person.rb - to understand instance variables
 conditions.rb
 ruby_strings.rb
+arrays.rb
