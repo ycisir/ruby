@@ -26,7 +26,6 @@ arr.each do |args|
 end
 
 
-=end
 
 
 class Test
@@ -68,3 +67,80 @@ t.sum(1,99) do |x,y,z|
 	# puts z
 	x + y + z
 end
+
+=end
+
+
+
+
+
+
+
+# there two types of blocks
+
+# regular we use in scripting but if want to use block in methods we have these two
+
+# 1) proc
+# 2) lamda
+
+
+
+
+# p = Proc.new{|x,y| puts "this is proc" }
+# l = lambda{|a,b| puts "this is lambda" }
+
+# p.call(1,2,3)
+# l.call(1,2)
+
+
+
+# difference between Procs and lambda
+
+# Proc do not care about the argument or number of arguments passed to it
+# lambda strict on number of arguments 
+
+
+
+# Proc or lambda defined inside a method with return keyword
+
+# def proc_return
+# 	p = Proc.new{return "Proc is being called inside the method"}
+# 	p.call
+# 	return "PROC METHOD RETURN"
+# end
+
+
+# def lambda_return
+# 	l = lambda{return "lambda is being called inside the method"}
+# 	final_str = l.call
+# 	return final_str + " LAMDA METHOD RETURN"
+# end
+
+
+# puts proc_return
+# puts lambda_return
+
+
+
+
+
+# Proc or lambda defined outside a method with return keyword
+
+# dont use this it return nothing
+
+# p = Proc.new{return "Proc is being called inside the method"}
+# def proc_return(proc)
+# 	proc.call
+# 	return "PROC METHOD RETURN"
+# end
+
+
+l = lambda{return "lambda is being called inside the method"}
+def lambda_return(lambd)
+	final_str = lambd.call
+	return final_str + " LAMDA METHOD RETURN"
+end
+
+
+# puts proc_return(p)
+puts lambda_return(l)

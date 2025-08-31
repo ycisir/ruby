@@ -48,3 +48,8 @@ person.rb - to understand instance variables
 conditions.rb
 ruby_strings.rb
 arrays.rb
+methods.rb
+blocks.rb
+self.rb - current object
+exception.rb
+person.rb - setter getters
