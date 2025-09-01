@@ -1,3 +1,4 @@
+=begin
 class Person
 
 	# if we call method on single object so we use create instance method
@@ -12,6 +13,10 @@ class Person
 		@first_name = first_name
 		@last_name = last_name
 		@age = age
+	end
+
+	def hello
+		puts "hello from person class"
 	end
 
 	def fullname
@@ -45,17 +50,26 @@ class Person
 
 
 
-	def self.sort_by_age(students)
-		students.sort_by!{|student| student.age}
+
+
+	def self.sort_by_attr(students, attr)
+		# methods that cover all below methods
+
+		dont use send directly use public_send
+		students.sort_by{|student| student.send(attr)}
 	end
 
-	def self.sort_by_first_name(students)
-		students.sort_by!{|student| student.first_name}
-	end
+	# def self.sort_by_age(students)
+	# 	students.sort_by!{|student| student.age}
+	# end
 
-	def self.sort_by_last_name(students)
-		students.sort_by!{|student| student.last_name}
-	end
+	# def self.sort_by_first_name(students)
+	# 	students.sort_by!{|student| student.first_name}
+	# end
+
+	# def self.sort_by_last_name(students)
+	# 	students.sort_by!{|student| student.last_name}
+	# end
 
 	# setter
 	# attr_writer :name, :age
@@ -102,14 +116,14 @@ end
 # puts john.age
 
 
-p1 = Person.new("Harry", "Potter", 18)
-p2 = Person.new("Ron", "Weasely", 19)
-p3 = Person.new("Hermoine", "Hranger", 18)
-p4 = Person.new("Draco", "Malfoy", 20)
-p5 = Person.new("Ginny", "Weasely", 17)
+# p1 = Person.new("Harry", "Potter", 18)
+# p2 = Person.new("Ron", "Weasely", 19)
+# p3 = Person.new("Hermoine", "Hranger", 18)
+# p4 = Person.new("Draco", "Malfoy", 20)
+# p5 = Person.new("Ginny", "Weasely", 17)
 
 
-students = [p1,p2,p3,p4,p5]
+# students = [p1,p2,p3,p4,p5]
 
 
 # puts Person.eldest(students).inspect
@@ -118,4 +132,32 @@ students = [p1,p2,p3,p4,p5]
 # puts students.inspect
 
 
-puts Person.sort_by_first_name(students).inspect
+# puts Person.sort_by_first_name(students).inspect
+
+# puts Person.sort_by_attr(students, "first_name").inspect
+
+
+=end
+
+
+
+
+
+
+
+
+# using module here 
+# =================================
+require "./reusable_module"
+
+class Person
+
+	# include is for using methods of the module as instance methods in the class
+	# extend is for using methods of the module as class methods in the class
+	
+	include Reusable::RInstanceMethods #instance methods
+	extend Reusable::RClassMethods #class methods
+
+	attr_accessor :city
+
+end

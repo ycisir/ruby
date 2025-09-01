@@ -53,3 +53,7 @@ blocks.rb
 self.rb - current object
 exception.rb
 person.rb - setter getters
+employee.rb - require person.rb in this file
+reusable_module.rb - this is module for reusable code
+person.rb - consume above module here
+employee.rb - consume above module here
