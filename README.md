@@ -2,8 +2,6 @@
 Ruby is an object-oriented and interpreted programming language that executes code line by line. In Ruby, everything is an object, including classes and modules, which are considered constants.
 
 ### content
-===============================================
-
 - car.rb - for understanding oops
 - variable.rb - variables
 - person.rb - to understand instance variables
