@@ -19,7 +19,7 @@ Ruby is an object-oriented and interpreted programming language that executes co
 - employee.rb - consume above module here
 
 ### requirements
-- ruby-3.x
+- ruby-3.3.9
 
 ### references
 - https://ruby-doc.org/

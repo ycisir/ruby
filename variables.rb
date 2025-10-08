@@ -27,26 +27,20 @@ class VariableScopes
 
 	# puts local_variable
 
-	# methods which are called on an object are called
+	# methods which are called on/by an object are called
 	# instance method
 	def display_variables
-
 		# local variable does not have scope in here
 		# bcz its not defined in this method
 		# puts local_variable # error
-		
 		local_variable1 = "LOCAL VARIABLE in method"
-		
 		puts $global_variable
 		puts local_variable1
 		puts @@class_variable
 		puts @instance_variable.inspect # instance variable do not have scope in instance methods
 		puts CONSTANT
 		# puts PI
-
 	end
-
-
 
 	# class methods (static methods)
 	# do not require an object to be called
@@ -59,10 +53,18 @@ class VariableScopes
 		puts @instance_variable # instance variable have scope in class methods
 		puts CONSTANT
 	end
+
+    # same as above class method
+    def self.show_variables
+        local_variable1 = "LOCAL VARIABLE in class method"
+        puts $global_variable
+        puts local_variable1
+        puts @@class_variable
+        puts @instance_variable # instance variable have scope in class methods
+        puts CONSTANT
+    end
 	
-
 	# puts local_variable
-
 end # class ends here
 
 # declaring class method outside the class
@@ -78,13 +80,9 @@ end
 
 # VariableScopes::show_variables
 # VariableScopes.show_variables
-VariableScopes::show_variables2
+# VariableScopes::show_variables2
+# VariableScopes.show_variables2
 
 
 # Instance variable -- Variables that are used to set attribute to an object
-
-
-
-
-
 # classes and modules are considered as constants in Ruby

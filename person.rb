@@ -1,6 +1,5 @@
 =begin
 class Person
-
 	# if we call method on single object so we use create instance method
 	# but if we want to call method on multiple objects we use class method
 	

@@ -4,7 +4,7 @@ conditional statements in Ruby
 ================================
 
 1) if
-2) unless (offosite of -- if)
+2) unless (opposite of -- if)
 3) if-else
 4) unless-else
 5) if-elsif-else
