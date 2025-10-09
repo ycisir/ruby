@@ -1,18 +1,12 @@
 =begin
-
 exception handling
-==========================
-
 =end
 
-
 # x = 10
-
 # until x == -1
 # 	puts 100/x
 # 	x -= 1
 # end
-
 
 x = 10
 

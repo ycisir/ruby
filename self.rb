@@ -1,30 +1,25 @@
 =begin
-
 self
-============
-
 current object
-
 =end
 
-# class Cycling
-# 	attr_accessor :name
+class Cycling
+	attr_accessor :name
 
-# 	def start_cycling
-# 		puts "#{self.name} is riding a bicycle"
-# 	end
+	def start_cycling
+		puts "#{self.name} is riding a bicycle"
+	end
+end
 
-# end
+simon = Cycling.new
+doe = Cycling.new
 
-# simon = Cycling.new
-# doe = Cycling.new
-
-# simon.name = "Simon"
-# doe.name = "Doe"
+simon.name = "Simon"
+doe.name = "Doe"
 
 
-# simon.start_cycling
-# doe.start_cycling
+simon.start_cycling
+doe.start_cycling
 
 
 

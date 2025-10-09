@@ -1,7 +1,5 @@
 =begin
 Arrays in Ruby
-==============================
-
 Array is a container so that I can store objects
 Collection of objects
 In Ruby it can hold any type of objects like int string float arr hash etc

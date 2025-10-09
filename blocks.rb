@@ -12,7 +12,6 @@ regular we use in scripting but if want to use block in methods we have these tw
 1) proc
 2) lamda
 
-
 # arr = (1..10).to_a
 # puts arr.each # return enumerator object
 # arr.each { |e| puts e  } # {blocks}
@@ -62,6 +61,7 @@ end
 
 # p = Proc.new{|x,y| puts "this is proc" }
 # l = lambda{|a,b| puts "this is lambda" }
+# l = ->(a,b) { puts "this is lambda #{a} #{b}" }
 
 # p.call(1,2,3)
 # l.call(1,2)
@@ -90,19 +90,17 @@ end
 # Proc or lambda defined outside a method with return keyword
 # dont use this it return nothing
 
-# p = Proc.new{return "Proc is being called inside the method"}
-# def proc_return(proc)
-# 	proc.call
-# 	return "PROC METHOD RETURN"
-# end
-
-
-l = lambda{return "lambda is being called inside the method"}
-def lambda_return(lambd)
-	final_str = lambd.call
-	return final_str + " LAMDA METHOD RETURN"
+p = Proc.new{return "Proc is being called inside the method"}
+def proc_return(proc)
+	proc.call
+	return "PROC METHOD RETURN"
 end
 
+# l = lambda{return "lambda is being called inside the method"}
+# def lambda_return(lambd)
+# 	final_str = lambd.call
+# 	return final_str + " LAMDA METHOD RETURN"
+# end
 
-# puts proc_return(p)
-puts lambda_return(l)
+puts proc_return(p)
+# puts lambda_return(l)

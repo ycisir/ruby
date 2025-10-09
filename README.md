@@ -11,6 +11,7 @@ Ruby is an object-oriented and interpreted programming language that executes co
 - methods.rb
 - blocks.rb
 - self.rb - current object
+- hash.rb
 - exception.rb
 - person.rb - setter getters
 - employee.rb - require person.rb in this file

@@ -1,7 +1,5 @@
 =begin
-
 conditional statements in Ruby
-================================
 
 1) if
 2) unless (opposite of -- if)
@@ -10,10 +8,6 @@ conditional statements in Ruby
 5) if-elsif-else
 6) terinary
 	
-
-
-
-
 x = 100
 
 if x == 100
@@ -51,10 +45,6 @@ else
 end
 
 puts "X is 200" unless x == 200
-
-
-
-
 
 x = 10
 y = 20
@@ -116,8 +106,6 @@ looping statements in Ruby
 
 for, each -- used only on collections(array, hashes)
 upto, downto, each, times --- all these are methods
-
-
 
 i = 1
 while i <= 10

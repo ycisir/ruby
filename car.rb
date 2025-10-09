@@ -6,7 +6,6 @@ class Car
 	engine = 1
 	@@gears = 6
 
-
 	# what it does
 	def start
 		puts "------------WROOOOOOOM-----------STARTED-----------"
