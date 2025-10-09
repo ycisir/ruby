@@ -8,14 +8,10 @@ Reference: https://docs.ruby-lang.org/en//3.3/String.html
 there is no data types in ruby as char also
 str = 'c'
 str = "abcd"
-
-both are string
-=end
-
+#both are string
 
 
 # interpolation
-
 name = "Jack"
 
 puts "name is #{name}"
@@ -124,7 +120,7 @@ sym = :hi
 puts :hi.object_id
 sym = :hi
 puts :hi.object_id
-
+=end
 
 
 =begin
@@ -134,6 +130,7 @@ Regular expression
 Reference: https://rubular.com/
 pattern matchin apply on strings
 regex always written between / here /
+only apply on String
 
 
 
@@ -148,6 +145,11 @@ vallid_username5 = "jack_sparrow123"
 vallid_username6 = "jack.sparrow123"
 
 puts vallid_username1.match?(username_regex)
+puts vallid_username2.match?(username_regex)
+puts vallid_username3.match?(username_regex)
+puts vallid_username4.match?(username_regex)
+puts vallid_username5.match?(username_regex)
+puts vallid_username6.match?(username_regex)
 
 # str = "hey ruby developer"
 # puts str =~ /\s/ # return index of whitespace

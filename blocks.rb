@@ -1,5 +1,4 @@
 =begin
-
 Ruby blocks
 ==============================
 
@@ -8,7 +7,6 @@ closures (function within a function) / callback
 want to call block we have to use keyword (yield)
 
 there two types of blocks
-
 regular we use in scripting but if want to use block in methods we have these two
 
 1) proc
@@ -16,20 +14,14 @@ regular we use in scripting but if want to use block in methods we have these tw
 
 
 # arr = (1..10).to_a
-
 # puts arr.each # return enumerator object
-
 # arr.each { |e| puts e  } # {blocks}
 
 arr.each do |args|
 	puts args
 end
 
-
-
-
 class Test
-
 	# def disp(x)
 		# puts "-------#{x}"
 		# yield if block_given? # always use this if provide block with any function 
@@ -49,9 +41,7 @@ class Test
 		sum = func_sum + block_ans
 		puts sum
 	end
-
 end
-
 
 t = Test.new
 # t.disp(1) { puts "hey, from block" }
@@ -70,45 +60,22 @@ end
 
 =end
 
-
-
-
-
-
-
-# there two types of blocks
-
-# regular we use in scripting but if want to use block in methods we have these two
-
-# 1) proc
-# 2) lamda
-
-
-
-
 # p = Proc.new{|x,y| puts "this is proc" }
 # l = lambda{|a,b| puts "this is lambda" }
 
 # p.call(1,2,3)
 # l.call(1,2)
 
-
-
 # difference between Procs and lambda
-
 # Proc do not care about the argument or number of arguments passed to it
 # lambda strict on number of arguments 
 
-
-
 # Proc or lambda defined inside a method with return keyword
-
 # def proc_return
 # 	p = Proc.new{return "Proc is being called inside the method"}
 # 	p.call
 # 	return "PROC METHOD RETURN"
 # end
-
 
 # def lambda_return
 # 	l = lambda{return "lambda is being called inside the method"}
@@ -116,16 +83,11 @@ end
 # 	return final_str + " LAMDA METHOD RETURN"
 # end
 
-
 # puts proc_return
 # puts lambda_return
 
 
-
-
-
 # Proc or lambda defined outside a method with return keyword
-
 # dont use this it return nothing
 
 # p = Proc.new{return "Proc is being called inside the method"}

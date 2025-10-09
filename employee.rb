@@ -1,6 +1,4 @@
-
 =begin 
-
 require "date"
 require "./person" #provide like this ./person shortcut of this is above
 
@@ -44,7 +42,6 @@ class Employee < Person
 	def self.sort_by_salary(employees)
 		employees.sort_by!{|employee| employee.salary}
 	end
-
 end
 
 
@@ -55,7 +52,6 @@ emp4 = Employee.new("Hermoine", "Hranger", 18, "CSE", 1999, 23_00000)
 emp5 = Employee.new("Draco", "Malfoy", 20, "Mechanical", 2011, 14_00000)
 emp6 = Employee.new("Ginny", "Weasely", 17, "CSE", 2003, 19_00000)
 emp7 = Employee.new("Luna", "Lovegood", 18, "ELEC", 2003, 18_00000)
-
 emp_arr = [emp1, emp2, emp3, emp4, emp5, emp6, emp7]
 
 # puts Employee.eldest(emp_arr).inspect
@@ -64,18 +60,10 @@ emp_arr = [emp1, emp2, emp3, emp4, emp5, emp6, emp7]
 # puts emp1.fullname
 
 # puts emp1.eligible_for_perk?
-
 # puts emp5.good_salary?
-
-
-
-
 puts emp1.fullname
 
 =end
-
-
-
 
 
 # using module here 
@@ -84,10 +72,8 @@ require "date"
 require "./reusable_module"
 
 class Employee
-
 	# include is for using methods of the module as instance methods in the class
 	# extend is for using methods of the module as class methods in the class
-
 	include Reusable::RInstanceMethods #instance methods (:: --- scope resolution operator)
 	extend Reusable::RClassMethods #class methods
 
@@ -121,10 +107,7 @@ class Employee
 	def self.sort_by_salary(employees)
 		employees.sort_by!{|employee| employee.salary}
 	end
-
 end
-
-
 
 emp1 = Employee.new("Harry", "Potter", 18, "CSE", 1999, 25_00000)
 emp2 = Employee.new("Ron", "Weasely", 18, "CSE", 2001, 21_00000)
@@ -136,12 +119,8 @@ emp7 = Employee.new("Luna", "Lovegood", 18, "ELEC", 2003, 18_00000)
 
 emp_arr = [emp1, emp2, emp3, emp4, emp5, emp6, emp7]
 
-
 puts emp1.fullname #instance method calling
-
 puts Employee.eldest(emp_arr).inspect #class method calling
 
-
 # calling say_hey method in this file
-
 Reusable::Hey.new.say_hey

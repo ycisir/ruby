@@ -3,10 +3,10 @@ Ruby is an object-oriented and interpreted programming language that executes co
 
 ### content
 - car.rb - for understanding oops
-- variable.rb - variables
+- variables.rb - variables
 - person.rb - to understand instance variables
 - conditions.rb
-- ruby_strings.rb
+- strings.rb
 - arrays.rb
 - methods.rb
 - blocks.rb
