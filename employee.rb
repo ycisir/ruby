@@ -119,8 +119,8 @@ emp7 = Employee.new("Luna", "Lovegood", 18, "ELEC", 2003, 18_00000)
 
 emp_arr = [emp1, emp2, emp3, emp4, emp5, emp6, emp7]
 
-puts emp1.fullname #instance method calling
-puts Employee.eldest(emp_arr).inspect #class method calling
-
+# puts emp1.fullname #instance method calling
+# puts Employee.eldest(emp_arr).inspect #class method calling
+puts Employee.included_modules
 # calling say_hey method in this file
-Reusable::Hey.new.say_hey
+# Reusable::Hey.new.say_hey
