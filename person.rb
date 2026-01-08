@@ -1,3 +1,4 @@
+=begin
 class Person
 	# if we call method on single object so we use create instance method
 	# but if we want to call method on multiple objects we use class method
@@ -118,3 +119,18 @@ puts john.age
 # puts Person.sort_by_age(students).inspect
 # puts Person.sort_by_attr(students, "first_name").inspect
 # puts Person.sort_by_attr(students, "age").inspect
+=end
+
+# using module here
+# =================================
+require "./reusable_module"
+
+class Person
+	# include is for using methods of the module as instance methods in the class
+	# extend is for using methods of the module as class methods in the class
+	include Reusable::RInstanceMethods #instance methods
+	extend Reusable::RClassMethods #class methods
+	attr_accessor :city
+end
+
+p1 = Person.new("Harry", "Potter", 18, "CSE", 1999, 25_00000)
