@@ -2,6 +2,9 @@ class Person
 	# if we call method on single object so we use create instance method
 	# but if we want to call method on multiple objects we use class method
 
+	# setter and getter
+	attr_accessor :first_name, :last_name, :age, :city
+
 	@@breadth = true
 
 	def initialize(first_name, last_name, age)
@@ -61,33 +64,57 @@ class Person
 	# def self.sort_by_last_name(students)
 	# 	students.sort_by!{ |student| student.last_name }
 	# end
+
+	# same as below getter and setter methods
+	# setter
+	attr_writer :name, :age
+	# reader
+	attr_reader :name, :age
+
+	# setter
+	# def name=(name)
+	# 	@name = name
+	# end
+
+	# def age=(age)
+	# 	@age = age
+	# end
+
+	# getter
+	# def name
+	# 	@name # return
+	# end
+
+	# def age
+	# 	@age # return
+	# end
 end
 
-# john = Person.new
-# abdul = Person.new
+john = Person.new
+abdul = Person.new
 
-# john.name = "John"
-# john.age = 34
-# abdul.name = "Abdul"
-# abdul.age = 24
+john.name = "John"
+john.age = 34
+abdul.name = "Abdul"
+abdul.age = 24
 
-# puts john.inspect
-# puts abdul.inspect
+puts john.inspect
+puts abdul.inspect
 
-# puts john.name
-# puts john.age
+puts john.name
+puts john.age
 
-p1 = Person.new("Harry", "Potter", 18)
-p2 = Person.new("Ron", "Weasely", 19)
-p3 = Person.new("Hermoine", "Hranger", 18)
-p4 = Person.new("Draco", "Malfoy", 20)
-p5 = Person.new("Ginny", "Weasely", 17)
-students = [p1,p2,p3,p4,p5]
+# p1 = Person.new("Harry", "Potter", 18)
+# p2 = Person.new("Ron", "Weasely", 19)
+# p3 = Person.new("Hermoine", "Hranger", 18)
+# p4 = Person.new("Draco", "Malfoy", 20)
+# p5 = Person.new("Ginny", "Weasely", 17)
+# students = [p1,p2,p3,p4,p5]
 
-puts p1.fullname
-puts p1.is_alive?
+# puts p1.fullname
+# puts p1.is_alive?
 # puts Person.eldest(students).inspect
 # puts Person.sort_by_first_name(students).inspect
 # puts Person.sort_by_age(students).inspect
-puts Person.sort_by_attr(students, "first_name").inspect
-puts Person.sort_by_attr(students, "age").inspect
+# puts Person.sort_by_attr(students, "first_name").inspect
+# puts Person.sort_by_attr(students, "age").inspect
