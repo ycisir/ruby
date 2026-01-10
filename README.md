@@ -1,3 +1,3 @@
 # Ruby Fundamentals
 
-This repository is a journey of learning most beautiful programming language Ruby.
+This repository is a journey of learning most beautiful programming language.
