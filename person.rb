@@ -50,7 +50,7 @@ class Person
 
 	def self.sort_by_attr(students, attr)
 		# methods that cover all below methods
-		# dont use send directly use public_send
+		# dont use send directly use public_send (send method have capability to call private methods use public_send)
 		students.sort_by{ |student| student.send(attr) }
 	end
 
