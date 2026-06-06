@@ -34,7 +34,7 @@ puts val_arr.sum
 # Tip: For every problem, try to write a "verbose" version using each and a "concise" version using Enumerable methods
 
 
-# ================= Filtering & Selecting =====================
+# ===================== Filtering & Selecting =====================
 
 # 1. Select evens
 
@@ -260,7 +260,7 @@ puts val_arr.sum
 
 
 # 10. select primes
-arr = (1..31).to_a
+# arr = (1..31).to_a
 # prime_nums = []
 
 # arr.each do |e|
@@ -277,7 +277,266 @@ arr = (1..31).to_a
 # end
 
 
-require "prime"
-prime_nums = arr.select { |e| e.prime? }
+# require "prime"
+# prime_nums = arr.select { |e| e.prime? }
 
-puts prime_nums.inspect
+# puts prime_nums.inspect
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# ===================== 2. Mapping & Transformation =====================
+
+# 1. Uppercase strings
+
+# strings = ["cat", "apple", "hey", "dog", "elephant"]
+# modified_strings = []
+
+# strings.each do |str|
+#   modified_strings << str.upcase
+# end
+
+
+# using map
+# modified_strings = strings.map { |s| s.upcase }
+# puts modified_strings.inspect
+
+
+
+
+
+
+
+
+# 2. square numbers
+
+# arr = (1..10).to_a
+
+# squared_numbers = []
+
+# arr.each do |a|
+#   squared_numbers << a*a
+# end
+
+
+
+# squared_numbers = arr.map { |a| a*a }
+
+# puts squared_numbers.inspect
+
+
+
+
+
+
+
+# 3. symbols to strings
+# symb_arr = [:first_name, :last_name, :age]
+# symb_to_str = []
+
+# symb_arr.each do |s|
+#   symb_to_str << s.to_s
+# end
+
+
+
+# symb_to_str = symb_arr.map { |s| s.to_s }
+# symb_to_str = symb_arr.map(&:to_s)
+
+# puts symb_to_str.inspect
+
+
+
+
+
+
+
+
+
+
+# 4. extract hash values
+# user_info = {first_name: "Harry", last_name: "Potter", age: 23}
+
+# user_values = []
+
+# user_info.each do |key, value|
+#   user_values << value
+# end
+
+
+# user_values = user_info.values
+# user_values = user_info.map{ |k,v| v }
+
+# puts user_values.inspect
+
+
+
+
+
+
+
+
+# 5. swap keys/values
+# h = { "Alice" => 85, "Bob" => 92, "Charlie" => 78 }
+
+# swaped_hash = {}
+
+# h.each do |k,v|
+#   swaped_hash[v] = k if v > 80
+# end
+
+# swaped_hash = h.each_with_object({}) do |(name, score), new_hash|
+#   new_hash[score] = name if score > 80
+#   # puts new_hash
+# end
+
+# swaped_hash = h.invert
+
+# puts swaped_hash.inspect
+
+
+
+
+
+
+
+
+# 6. prefix strings
+# slack_channels = ["developers", "stagging", "production", "qa", "devops"]
+
+# modified_slack_channels = []
+# slack_channels.each do |c|
+#   modified_slack_channels << "##{c}"
+# end
+
+# puts modified_slack_channels.inspect
+
+# slack_channels.map { |c| c.prepend("#") } # prepend modified original arr
+# p slack_channels
+
+
+
+
+
+
+
+
+
+
+# 7. flatten arrays
+# arr = [1, [2, 3], [[4], 5]]
+
+
+# def flatten(arr)
+#   result = []
+#   arr.each do |a|
+#     if a.is_a?(Array)
+#       # Recursively call the function and combine the result
+#       result.concat(flatten(a))
+#     else
+#       # Just add the integer
+#       result << a
+#     end
+#   end
+#   result
+# end
+
+# result = flatten(arr)
+
+# p result.inspect
+
+
+
+# flatten_arr = arr.flatten
+# p flatten_arr.inspect
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# 8. zip to hash
+# arr1 = ["first_name", "last_name", "age", "city"]
+# arr2 = ["Harry", "Potter", 23]
+
+# h = {}
+
+# arr1.each_with_index do |key, index|
+#   h[key.to_sym] = arr2[index]
+# end
+
+
+# h = arr1.zip(arr2).to_h
+# h = arr1.map(&:to_sym).zip(arr2).to_h
+
+# puts h
+
+
+
+
+
+
+
+
+
+
+# 9. array to hash
+# arr = [["first_name", "Harry"], ["last_name", "Potter"], ["age", 23]]
+
+# h = {}
+
+# arr.each do |a|
+#   h[a[0].to_sym] = a[1]
+# end
+
+
+# h = arr.to_h { |k, v| [k.to_sym, v] }
+# puts h
+
+
+
+
+
+
+
+
+
+
+
+# 10. double values
+
+arr = [10, 25, 50, 100]
+# doubled_val = []
+
+# arr.each do |a|
+#   doubled_val << a*2
+# end
+
+doubled_val = arr.map { |a| a*2 }
+
+puts doubled_val.inspect
