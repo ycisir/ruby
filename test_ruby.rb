@@ -306,6 +306,8 @@ puts val_arr.sum
 
 # 1. Uppercase strings
 
+# map is alias of collect
+
 # strings = ["cat", "apple", "hey", "dog", "elephant"]
 # modified_strings = []
 
@@ -530,13 +532,299 @@ puts val_arr.sum
 
 # 10. double values
 
-arr = [10, 25, 50, 100]
+# arr = [10, 25, 50, 100]
 # doubled_val = []
 
 # arr.each do |a|
 #   doubled_val << a*2
 # end
 
-doubled_val = arr.map { |a| a*2 }
+# doubled_val = arr.map { |a| a*2 }
 
-puts doubled_val.inspect
+# puts doubled_val.inspect
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# ===================== 3. Aggregation & Summarization =====================
+
+# 1. Sum array
+
+# arr = [10, 25, 50, 100]
+
+# result = 0
+
+# arr.each do |a|
+#   result += a
+# end
+
+
+# arr.inject { |sum, a| sum += a } 
+# result = arr.reduce { |sum, a| sum += a } # alias of inject
+# result = arr.sum
+
+# puts result
+
+
+
+
+
+
+
+
+
+
+# 2. product
+
+# arr = [2, 1, 9, 3]
+
+# result = 1
+
+# arr.each do |a|
+#   result *= a
+# end
+
+
+# result = arr.reduce { |prod, a| prod * a }
+
+# puts result
+
+
+
+
+
+
+
+
+
+# 3. max
+
+# arr = [2, 1, 9, 99]
+
+# max = arr[0]
+
+# arr.each do |a|
+#   # if a > max
+#   #   max = a
+#   # end
+
+#   max = a if a > max
+# end
+
+
+
+# max = arr.reduce { |acc, a| a > acc ? a : acc }
+# max = arr.max
+
+# p max
+
+
+
+
+
+
+
+
+
+
+
+
+# 4. min string length
+
+# country = %W/Japan Turkiye Australia England Finland France Italy Ghana Brazil Norway Korea Iran Iraq Fiji Cuba Oman Peru Egypt/
+
+# result = country[0]
+
+# country.each do |c|
+#   result = c if c.length < result.length
+# end
+
+
+# result = country.reduce { |acc, y| y.length < acc.length ? y : acc } # Iran
+# result = country.min_by(&:length)
+# p result
+
+
+
+
+
+
+
+
+
+
+
+# 5. reduce to sentence
+
+# sentence = ["Database migrated", "Assets compiled", "Tests passed"]
+
+# result = sentence.join(", ")
+# result = sentence.join("; ")
+
+# p result
+
+
+
+
+
+
+
+
+
+
+
+# 6. average
+
+# arr = [2, 1, 9, 99]
+
+# sum = 0
+# n = arr.length
+
+# arr.each do |a|
+#   sum += a
+# end
+
+# avg = sum / n
+
+
+
+# avg = arr.sum.to_f / arr.length
+
+# sum = arr.reduce(0) { |acc, a| acc + a }
+# avg = sum.to_f / arr.length
+
+# p avg
+
+
+
+
+
+
+
+
+
+
+
+
+
+# 7. factorial
+
+# n = 5
+# fact = 1
+
+# for i in 1..n
+  # fact *= i
+# end
+
+
+
+# fact = (1..n).reduce(1) { |acc, i| acc*i }
+
+# p fact
+
+
+
+# 1x2x3x4x5
+
+
+
+
+
+
+
+
+
+
+
+
+# 8. longest word
+
+# sentence = ["Database migrated", "Assets compiled", "Tests passed", "Production is down"]
+
+# result = sentence[0]
+
+# sentence.each do |c|
+#   result = c if c.length > result.length
+# end
+
+
+# result = sentence.reduce { |acc, y| acc.length > y.length ? acc : y }
+# result = sentence.max_by(&:length)
+
+# p result
+
+
+
+
+
+
+
+
+
+
+
+
+# 9. tally words
+
+# stock = ["Laptop", "Mouse", "Laptop", "Monitor", "Mouse", "Laptop"]
+
+# count = {}
+
+# stock.each do |item|
+#   if count[item]
+#     count[item] += 1
+#   else
+#     count[item] = 1
+#   end
+# end
+
+# count = stock.tally
+
+# p count
+
+
+
+
+
+
+
+
+
+
+
+
+# 10. sum transaction amounts
+
+transactions = [{amount: 100, category: "Food"}, {amount: 200, category: "Rent"}, {amount: 50, category: "Food"}]
+
+# sum = Hash.new(0)
+
+# transactions.each do |transaction|
+#   category = transaction[:category]
+#   amount = transaction[:amount]
+#   sum[category] += amount
+# end
+
+# sum = transactions.group_by { |transaction| transaction[:category] }.transform_values do |list|
+#   list.sum { |transaction| transaction[:amount] }
+# end
+
+sum = transactions.each_with_object(Hash.new(0)) do |transaction, ledger|
+  ledger[transaction[:category]] += transaction[:amount]
+end
+
+p sum
