@@ -809,7 +809,7 @@ puts val_arr.sum
 
 # 10. sum transaction amounts
 
-transactions = [{amount: 100, category: "Food"}, {amount: 200, category: "Rent"}, {amount: 50, category: "Food"}]
+# transactions = [{amount: 100, category: "Food"}, {amount: 200, category: "Rent"}, {amount: 50, category: "Food"}]
 
 # sum = Hash.new(0)
 
@@ -823,8 +823,156 @@ transactions = [{amount: 100, category: "Food"}, {amount: 200, category: "Rent"}
 #   list.sum { |transaction| transaction[:amount] }
 # end
 
-sum = transactions.each_with_object(Hash.new(0)) do |transaction, ledger|
-  ledger[transaction[:category]] += transaction[:amount]
-end
+# sum = transactions.each_with_object(Hash.new(0)) do |transaction, ledger|
+#   ledger[transaction[:category]] += transaction[:amount]
+# end
 
-p sum
+# p sum
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# ===================== 4. Grouping & Organization =====================
+
+# 1. Group by first letter
+
+# stock = ["Laptop", "Mouse", "Laptop", "Monitor", "Mouse", "Laptop"]
+
+# h = Hash.new(0)
+# h = Hash.new { |hash, key| hash[key] = [] }
+
+# stock.each do |item|
+#   letter = item[0]
+#   h[letter] << item
+# end
+
+
+# h = stock.group_by { |item| item[0]&.upcase || "?" }
+
+# p h
+
+
+
+
+
+
+
+
+
+
+
+
+
+# 2. group by category
+
+# items = ["Apple", "Banana", "Apricot", "Blueberry"]
+
+# h = items.group_by { |item| item[0] }
+
+# p h
+
+
+
+
+
+
+
+
+# 3. group even/odd
+
+# arr = (1..10).to_a
+
+# h = Hash.new { |hash, key| hash[key] = [] }
+
+# arr.each do |a|
+#   if a%2 != 0
+#     h[:odd] << a
+#   else
+#     h[:even] << a
+#   end
+# end
+
+
+# h = arr.group_by { |i| i%2 != 0 ? :odd : :even }
+
+# p h
+
+
+
+
+
+
+
+
+
+
+# 4. group by length
+
+# items = ["Apple", "Banana", "Apricot", "Blueberry"]
+
+# h = Hash.new { |hash, key| hash[key] = [] }
+
+# items.each do |item|
+#   h[item.length] << item
+# end
+
+
+# h = items.group_by { |item| item.length }
+# counts = items.group_by(&:length).transform_values(&:size) # get count
+
+# p h
+# p counts
+
+
+
+
+
+
+
+
+
+
+
+# 5. sort hashes
+
+# h = {"india" => "delhi", "australia" => "canberra", "malaysia" => "kuala lampur", "china" => "beijing", "saudia arabia" => "riyadh"}
+
+# sorted_hash = h.sort.to_h
+# sorted_hash = h.sort { |x,y| x <=> y }.to_h
+# sorted_hash = h.sort { |x,y| y <=> x }.to_h # desc
+
+
+# 8. sort hash by values
+# sorted_hash = h.sort_by { |k,v| v }.to_h
+
+# p sorted_hash.class
+# p sorted_hash
+
+
+
+
+
+
+
+
+
+# 6. sort strings by length
+
+# items = ["Apple", "Banana", "Apricot", "Blueberry"]
+
+# sorted_items_by_length = items.sort_by { |x| x.length }
+# sorted_items_by_length = items.sort_by(&:length)
+
+# p sorted_items_by_length
