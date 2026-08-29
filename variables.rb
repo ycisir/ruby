@@ -27,6 +27,10 @@ class VariableScopes
 
 	# puts local_variable
 
+	def initialize
+		@instance_variable = "INSTANCE VARIABLE FROM INSTANCE OBJECT"
+	end
+
 	# methods which are called on/by an object are called
 	# instance method
 	def display_variables
@@ -37,7 +41,8 @@ class VariableScopes
 		puts $global_variable
 		puts local_variable1
 		puts @@class_variable
-		puts @instance_variable.inspect # instance variable do not have scope in instance methods
+		# puts @instance_variable.inspect # nil because not belongs to any object
+		p @instance_variable # INSTANCE VARIABLE FROM INSTANCE OBJECT
 		puts CONSTANT
 		# puts PI
 	end
@@ -75,10 +80,10 @@ def VariableScopes.show_variables2
 	puts VariableScopes::CONSTANT # scope resolution operator to get constant value outside the class
 end
 
-# newobj = VariableScopes.new
-# newobj.display_variables
+newobj = VariableScopes.new
+newobj.display_variables
 
-# VariableScopes::show_variables
+VariableScopes::show_variables
 # VariableScopes.show_variables
 # VariableScopes::show_variables2
 # VariableScopes.show_variables2
